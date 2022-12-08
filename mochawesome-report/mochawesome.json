@@ -1,0 +1,251 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-07T15:29:08.116Z",
+    "end": "2022-12-07T15:29:09.103Z",
+    "duration": 987,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "335e6fd9-e09c-436c-9d42-a8adb76a2229",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f35c8e81-34bf-45c0-a413-719af46cfccd",
+          "title": "Get User By ID Test",
+          "fullFile": "D:\\TugasAPI\\tests\\get_user_by_id.js",
+          "file": "\\tests\\get_user_by_id.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Get User By ID Test\"",
+              "fullTitle": "Get User By ID Test \"before each\" hook in \"Get User By ID Test\"",
+              "timedOut": null,
+              "duration": 63,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "let body = {}\nObject.assign(body , responseBody);\nresponse = await apiUser.postUserCreate(body);\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "5c6d1d20-6073-4fb9-ba31-4bd5fc132af7",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "[@TC3] Verify get user API return 200 when using valid id",
+              "fullTitle": "Get User By ID Test [@TC3] Verify get user API return 200 when using valid id",
+              "timedOut": null,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('data ID = ' + response.body.id);\n//logic API get user by ID",
+              "err": {},
+              "uuid": "6b53946f-173b-4ffe-b885-0af4a418cc23",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6b53946f-173b-4ffe-b885-0af4a418cc23"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "c625b339-e4ac-42b8-9567-de66df3c548e",
+          "title": "[@CreateUser]Create User API",
+          "fullFile": "D:\\TugasAPI\\tests\\api_user_test.js",
+          "file": "\\tests\\api_user_test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"[@CreateUser]Create User API\"",
+              "fullTitle": "[@CreateUser]Create User API \"before all\" hook in \"[@CreateUser]Create User API\"",
+              "timedOut": null,
+              "duration": 5,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "console.log('before');",
+              "err": {},
+              "uuid": "3bcd36c7-43ad-4c5e-a989-83dfbff7deb3",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook in \"[@CreateUser]Create User API\"",
+              "fullTitle": "[@CreateUser]Create User API \"before each\" hook in \"[@CreateUser]Create User API\"",
+              "timedOut": null,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "console.log('before Each');",
+              "err": {},
+              "uuid": "090f8e08-4ce4-4c13-9a17-01b9856a9731",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"[@CreateUser]Create User API\"",
+              "fullTitle": "[@CreateUser]Create User API \"after all\" hook in \"[@CreateUser]Create User API\"",
+              "timedOut": null,
+              "duration": 3,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "console.log('after');",
+              "err": {},
+              "uuid": "6fe94ac2-939d-4567-af18-86990d0cf00d",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"[@CreateUser]Create User API\"",
+              "fullTitle": "[@CreateUser]Create User API \"after each\" hook in \"[@CreateUser]Create User API\"",
+              "timedOut": null,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "console.log('after Each');",
+              "err": {},
+              "uuid": "5923594e-af86-48f9-8c7f-c98a71433879",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "[@TC1] Verify create user API return 200 when using valid request data",
+              "fullTitle": "[@CreateUser]Create User API [@TC1] Verify create user API return 200 when using valid request data",
+              "timedOut": null,
+              "duration": 68,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Your scripting code start\nconst dataCreateUser = apiData.userData('Cahyo', 'Gamers');\nconst response = await apiUser.postUserCreate(dataCreateUser);\nconst { hobbies } = dataCreateUser;\nexpect(response.status).to.equal(200);\nexpect(response.body.firstName).to.equal(dataCreateUser.firstName);\nexpect(response.body.hobbies).to.be.array();\nexpect(response.body.hobbies).to.be.equalTo(hobbies);\nexpect(response.body.hobbies).to.be.containingAllOf([\"Game\", \"Reading\", \"Manga\" ]);\nexpect(response.body).to.have.jsonSchema(createUserSchema);",
+              "err": {},
+              "uuid": "7378729a-0ccc-4931-8988-d4731b9d304c",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[@TC2] Verifiy create user API return 400 when using data age <= 0",
+              "fullTitle": "[@CreateUser]Create User API [@TC2] Verifiy create user API return 400 when using data age <= 0",
+              "timedOut": null,
+              "duration": 18,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Your scripting code start\n      let body = {}\n      Object.assign(body,responseBody);\n      body.age = -10;\n      const response = await apiUser.postUserCreate(body);\n      console.log(response.body);\n      expect(response.status).to.equal(400);\n      assert.equal(response.status, 400, 'status code is wrong');\n      expect(response.status).equal(400);\n      expect(response.body.message).to.include('you must specify');",
+              "err": {},
+              "uuid": "aae63d31-863e-4180-b61b-1c556068f4ad",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7378729a-0ccc-4931-8988-d4731b9d304c",
+            "aae63d31-863e-4180-b61b-1c556068f4ad"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 86,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
