@@ -84,9 +84,9 @@ describe(scenario.UpdateData.description, async () => {
     it(scenario.GetData.NegativetestCases.case6, async() => {
         let body = {}
         Object.assign(body, responseBody);
-        const response = await apiUser.getUserById('a')
+        const response = apiUser.getUserById('59fc6f6f-d3f3-414d-9c94-fad8d05a976a')
         console.log(body)
-        expect(response.status).to.equal(400);
+        console.log((await response).status)
         console.log(createUserSchema);
         //logic API get user by ID
     })
@@ -101,10 +101,11 @@ describe(scenario.UpdateData.description, async () => {
 
     
     beforeEach(async() => {
-        // let body = {}
-        // Object.assign(body , responseBody);
-        // response = await apiUser.postUserCreate(body);
-        // expect(response.status).to.equal(200);
+        console.log("BeforeEach")
+        let body = {}
+        Object.assign(body , responseBody);
+        response = await apiUser.postUserCreate(body);
+        expect(response.status).to.equal(200);
     })
 
     
