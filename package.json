@@ -4,7 +4,7 @@
   "description": "IniBelajarAPIAutomationTest",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/_mocha tests/*.js",
+    "test": "node node_modules/mocha/bin/_mocha tests/*.js --jobs 2 --parallel --reporter mochawesome --require mochawesome/register",
     "test2": "npx mocha_tests/*.js"
   },
   "author": "Cahyo",

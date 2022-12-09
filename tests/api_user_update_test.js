@@ -15,33 +15,35 @@ describe(scenario.UpdateData.description, async () => {
     //     //Your scripting code start
     //     const response = await apiUser.getUserByName('Cahyo');
     // });
-
-    it(scenario.UpdateData.PositivetestCases.case1, async() => {
+    before(async() => {
+        
+    })
+    
+    it(scenario.UpdateData.PositivetestCases.case1,async() => {
         //Your scripting code start
         let body = {}
         Object.assign(body,responseBody);
-        body.occupation = "Back End";
-        body.nationality = "Indonesia";
+        body.occupation = "Back End Engineer";
+        body.nationality = "Indonesia"
         const response = await apiUser.postUpdateData(body);
-        console.log(body);
-        expect(response.status).to.equal(400);
-        assert.equal(response.status, 400, 'status code is wrong');
-        expect(response.status).equal(400);
-
+        console.log(response);
+        expect(response.status).to.equal(200);
+        assert.equal(response.status, 200, 'status code is wrong');
+        expect(response.status).equal(200);
     });
 
     
     it(scenario.UpdateData.NegativetestCases.case2, async() => {
         //Your scripting code start
-      let body = {}
-      Object.assign(body,responseBody);
-      body.age = 0;
-      const response = await apiUser.postUpdateData(body);
-      console.log(body);
-      expect(response.status).to.equal(400);
-      assert.equal(response.status, 400, 'status code is wrong');
-    //   expect(response.status).equal(400);
-    //   expect(response.body.message).to.include('you must specify');
+        let body = {}
+        Object.assign(body,responseBody);
+        body.age = 0;
+        const response = await apiUser.postUpdateData(body);
+        console.log(response);
+        expect(response.status).to.equal(400);
+        assert.equal(response.status, 400, 'status code is wrong');
+        expect(response.status).equal(400);
+
     });
 
     it(scenario.UpdateData.NegativetestCases.case3, async() => {
@@ -50,6 +52,7 @@ describe(scenario.UpdateData.description, async () => {
       Object.assign(body,responseBody);
       body.hobbies = [];
       const response = await apiUser.postUpdateData(body);
+      console.log(response);
       expect(response.status).to.equal(400);
       assert.equal(response.status, 400, 'status code is wrong');
       expect(response.status).equal(400);
@@ -62,16 +65,35 @@ describe(scenario.UpdateData.description, async () => {
       Object.assign(body,responseBody);
       body.id = null;
       const response = await apiUser.postUpdateData(body);
-      expect(response.status).to.equal(400);
-      assert.equal(response.status, 400, 'status code is wrong');
-      expect(response.status).equal(400);
+      expect(response.status).to.equal(200);
+      assert.equal(response.status, 200, 'status code is wrong');
+      expect(response.status).equal(200);
     //   expect(response.body.message).to.include('you must specify');
     });
 
-    before(async() => {
-        console.log('before');
+    it(scenario.GetData.PositivetestCases.case5, async() => {
+        let body = {}
+        Object.assign(body, responseBody);
+        const response = await apiUser.getUserById('59fc6f6f-d3f3-414d-9c94-fad8d05a976a')
+        console.log(body)
+        expect(response.status).to.equal(400);
+        console.log(createUserSchema)
+        //logic API get user by ID
     })
 
+    it(scenario.GetData.NegativetestCases.case6, async() => {
+        let body = {}
+        Object.assign(body, responseBody);
+        const response = await apiUser.getUserById('a')
+        console.log(body)
+        expect(response.status).to.equal(400);
+        console.log(createUserSchema);
+        //logic API get user by ID
+    })
+
+    before(async() => {
+        console.log("before")
+    })    
     
     after(async() => {
         console.log('after');
@@ -79,12 +101,17 @@ describe(scenario.UpdateData.description, async () => {
 
     
     beforeEach(async() => {
-        console.log('before Each');
+        // let body = {}
+        // Object.assign(body , responseBody);
+        // response = await apiUser.postUserCreate(body);
+        // expect(response.status).to.equal(200);
     })
 
     
     afterEach(async() => {
+
         console.log('after Each');
     })
 });
+
 
