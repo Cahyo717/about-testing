@@ -1,0 +1,2 @@
+jalankan "npm install" terlebih dahulu di luar folder agar wdio cypress bisa di running
+setelah terinstall dan muncul folder node_modules di direktori root folder , maka kode dapat di running menggunakan perintah "npm run wdio" di terminal
