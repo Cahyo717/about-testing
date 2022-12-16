@@ -2,32 +2,15 @@ const Page = require('./page')
 
 class HomePage extends Page {
 
-    get accountName() {
-        return $('#nameofuser')
+    get elements(){
+        return $(`//div[.='Elements']`)
     }
 
-    get buttonLogout() {
-        return $(`[onclick='logOut()']`)
+    async chooseBtnElements() {
+        await this.elements.scrollIntoView({block : 'center'})
+        await this.elements.click();
     }
 
-    getProductNameLocator(itemName){
-        return $(`//a[text()='${itemName}']`)
-    }
-
-    async clickProductName(itemName){
-        await this.getProductNameLocator(itemName).click()
-    }
-
-    async verifyLoginSuccess(user) {
-        return await expect(await this.accountName).toHaveTextContaining(user)
-    }
-
-    async logout() {
-        await this.buttonLogout.click()
-        await browser.pause(5000);
-        return $(`.btn-success`)
-
-    }
-}
+} 
 
 module.exports = new HomePage();

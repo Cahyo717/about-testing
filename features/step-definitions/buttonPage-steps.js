@@ -1,13 +1,16 @@
 const {Given, When, Then} = require('@wdio/cucumber-framework');
 const ButtonPage = require('../pageobjects/buttons-page');
+const homePage = require('../pageobjects/home-page');
 
 
 Given(/^I am on the front page$/, async() => {
-    await ButtonPage.open()
+    await homePage.open('https://demoqa.com/');
+    // await ButtonPage.clickElements();
 })
 
-When(/^I do click$/, async() => {
+When(/^I click button element$/, async() => {
     // Write code here that turns the phrase above into concrete actions
+    await homePage.chooseBtnElements()
     await ButtonPage.clickButton()
     await ButtonPage.buttonClickMe()
     await ButtonPage.buttonClickMe_Message()

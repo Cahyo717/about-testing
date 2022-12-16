@@ -1,6 +1,8 @@
 const Page = require('./page')
 
 class ButtonPage extends Page {
+   
+
     get button() {
         return $(`.show li:nth-of-type(5)`);
     }
@@ -21,7 +23,7 @@ class ButtonPage extends Page {
         return $('#dynamicClickMessage');
     }
 
-    get rightClickMe(){
+    get rightClick(){
         return $(`//div[.='Right Click Me']`)
     }
 
@@ -29,7 +31,14 @@ class ButtonPage extends Page {
         return $('#rightClickMessage');
     }
 
-   
+    
+    // async clickElements(){
+    //     await this.elements.scrollIntoView({
+    //         block : 'center',
+    //         inline : 'center'
+    //     });
+    //     await this.elements.click();
+    // }
 
     async clickButton(){
         await this.button.scrollIntoView()
@@ -42,7 +51,7 @@ class ButtonPage extends Page {
     }
 
     async buttonRightClick(){
-        await this.buttonDoubleClick.click()
+        await this.rightClick.click()
     }
 
     async buttonClickMe(){
@@ -63,10 +72,6 @@ class ButtonPage extends Page {
     
     async buttonClickMe_Message() {
         expect(await this.messageClickMe.getText()).toEqual('You have done a dynamic click');
-    }
-
-    open() {
-        return super.open('elements')
     }
 
 }
