@@ -1,7 +1,5 @@
 const {Given, When, Then} = require('@wdio/cucumber-framework');
-const { clickMe } = require('../pageobjects/buttons-page');
 const ButtonPage = require('../pageobjects/buttons-page');
-const HomePage = require('../pageobjects/home-page');
 
 
 Given(/^I am on the front page$/, async() => {
@@ -16,7 +14,8 @@ When(/^I do click$/, async() => {
   })
 
 When (/^I do the right click$/, async() => {
-   
+   await ButtonPage.buttonRightClick()
+   await ButtonPage.buttonRightClick_Message()
 })
 
 When (/^I do double click$/, async() => {
