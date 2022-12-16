@@ -236,8 +236,10 @@ exports.config = {
      * @param {String}                   uri      path to feature file
      * @param {GherkinDocument.IFeature} feature  Cucumber feature object
      */
-    // beforeFeature: function (uri, feature) {
-    // },
+    beforeFeature: function (uri, feature) {
+        console.log('BEFORE FEATURE')
+        browser.maximizeWindow()
+    },
     /**
      *
      * Runs before a Cucumber Scenario.

@@ -1,5 +1,4 @@
 const Page = require('./page')
-const FrontPage = require('../pageobjects/front-page');
 
 class HomePage extends Page {
 
