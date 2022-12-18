@@ -7,7 +7,14 @@ Given(/^I am on the front page$/, async() => {
     // await ButtonPage.clickElements();
 })
 
-When(/^I choose element$/, async() => {
+
+When('I choose element', async() => {
     // Write code here that turns the phrase above into concrete actions
     await homePage.chooseBtnElements()
   })
+
+
+When(/^I choose interactions$/, async() => {
+    // Write code here that turns the phrase above into concrete actions
+    await homePage.chooseBtnInteracts()
+})

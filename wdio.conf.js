@@ -1,3 +1,4 @@
+
 exports.config = {
     //
     // ====================
@@ -75,7 +76,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'warn',
+    logLevel: 'info',
     //
     // Set specific log levels per logger
     // loggers:
@@ -236,10 +237,10 @@ exports.config = {
      * @param {String}                   uri      path to feature file
      * @param {GherkinDocument.IFeature} feature  Cucumber feature object
      */
-    beforeFeature: function (uri, feature) {
-        console.log('BEFORE FEATURE')
-        browser.maximizeWindow()
-    },
+    // beforeFeature: function (uri, feature) {
+    //     console.log('BEFORE FEATURE')
+    //     browser.maximizeWindow()
+    // },
     /**
      *
      * Runs before a Cucumber Scenario.

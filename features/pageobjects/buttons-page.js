@@ -24,11 +24,11 @@ class ButtonPage extends Page {
     }
 
     get rightClick(){
-        return $(`//div[.='Right Click Me']`)
+        return $(`//button[@id='rightClickBtn']`)
     }
 
     get messageRightClickMe(){
-        return $('#rightClickMessage');
+        return $(`#rightClickMessage`);
     }
 
     
@@ -41,17 +41,21 @@ class ButtonPage extends Page {
     // }
 
     async clickButton(){
+        await browser.pause(5000);
         await this.button.scrollIntoView()
         await this.button.click()
-        // await browser.pause(5000);
+        
     }
 
     async buttonDoubleClick(){
-        await this.doubleClick.click()
+        await this.doubleClick.doubleClick()
     }
 
     async buttonRightClick(){
-        await this.rightClick.click()
+        await browser.pause(5000);
+        await this.rightClick.click({
+            button: 'right'
+        })
     }
 
     async buttonClickMe(){
@@ -63,7 +67,7 @@ class ButtonPage extends Page {
     }
 
     async buttonDoubleClick_Message(){
-        expect(await this.messageDoubleClick.getText()).toEqual('You have done a right click')
+        expect(await this.messageDoubleClick.getText()).toEqual("Double Click Me")
     }
 
     async buttonRightClick_Message(){
@@ -72,6 +76,10 @@ class ButtonPage extends Page {
     
     async buttonClickMe_Message() {
         expect(await this.messageClickMe.getText()).toEqual('You have done a dynamic click');
+    }
+
+    async open(path) {
+        return super.open(path)
     }
 
 }

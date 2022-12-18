@@ -6,10 +6,11 @@
     "@wdio/spec-reporter": "^8.0.0",
     "chromedriver": "^108.0.0",
     "geckodriver": "^3.2.0",
+    "tsconfig-paths": "^4.1.1",
     "wdio-chromedriver-service": "^8.0.0",
     "wdio-geckodriver-service": "^4.0.0"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js --cucumberOpts.tagExpression"
   }
 }
