@@ -2,7 +2,7 @@ const Page = require('./page');
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class ElementsPage extends Page {
+class InteractionsPage extends Page {
     /**
      * define selectors using getter methods
      */
@@ -11,10 +11,10 @@ class ElementsPage extends Page {
         return $(`//span[.='${_btn}']`);
     }
 
-    get elementDrag(){
+    get drag(){
         return $(`#draggable`)
     }
-    get elementDrop(){
+    get drop(){
         return $(`#droppable`)
     }
     
@@ -24,6 +24,7 @@ class ElementsPage extends Page {
 
 
     async actionBtnClick(btnName) {
+        await browser.pause(2000)
         await this.btnOnElements(btnName).waitForClickable();
         await this.btnOnElements(btnName).click();
     }
@@ -35,15 +36,15 @@ class ElementsPage extends Page {
 
     async dragingAndDrop(){
    
-        await this.elementDrag.scrollIntoView({ block: 'center', inline: 'center' })
-        await this.elementDrag.dragAndDrop( await this.elementDrop);
+        await this.drag.scrollIntoView({ block: 'center', inline: 'center' })
+        await this.drag.dragAndDrop( await this.drop);
         // await browser.pause(5000)
     }
 
     async verifyDroped(){
         // expect(await this.droppedText().getText()).toEqual("Dropped!")
-    console.log(await this.elementDrop.getCSSProperty('color'));
+    console.log(await this.drop.getCSSProperty('color'));
     }
 }
 
-module.exports = new ElementsPage();
+module.exports = new InteractionsPage();

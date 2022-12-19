@@ -8,7 +8,7 @@ Given(/^I am on the front page$/, async() => {
 })
 
 
-When('I choose element', async() => {
+When(/^I choose element$/, async() => {
     // Write code here that turns the phrase above into concrete actions
     await homePage.chooseBtnElements()
   })

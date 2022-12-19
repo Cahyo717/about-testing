@@ -3,24 +3,18 @@ const {
     When,
     Then
 } = require('@wdio/cucumber-framework');
-
+const interactionsPage = require('../pageobjects/interactions-page');
 const DropablePage = require('../pageobjects/interactions-page');
 
-
-// When(/^I choose interactions$/, async () => {
-//     await DropablePage.actionbtnInteract();
-// })
-
-
 When(/^I choose droppable$/, async () => {
-    await DropablePage.actionBtnClick("Droppable")
+    await interactionsPage.actionBtnClick("Droppable")
 })
 
 When(/^I interacting drag and drop$/, async () => {
-    await DropablePage.dragingAndDrop()
+    await interactionsPage.dragingAndDrop()
 })
 
 Then(/^Confirm droped on drop area$/,async()=>{
-    await DropablePage.verifyDroped()
+    await interactionsPage.verifyDroped()
     await browser.pause(3000);
 })
