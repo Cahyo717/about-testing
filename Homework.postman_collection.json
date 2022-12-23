@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "11acc2a1-6ccf-4d96-a647-f4acdeac5b06",
+		"name": "Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13924502"
+	},
+	"item": [
+		{
+			"name": "Single <resource>",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.collectionVariables.set(\"userId\", jsonData.data[0].id);\r",
+							"\r",
+							"pm.test('Success', function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"    const expectData = jsonData.data.map(function(elementArray){\r",
+							"      return elementArray\r",
+							"  })\r",
+							"  pm.test('Success', function(){\r",
+							"  pm.expect(expectData).to.not.include(\"George\");\r",
+							"    }) \r",
+							"\r",
+							"  pm.test('Success', function(){\r",
+							"  pm.expect(expectData).to.be.an('array').that.is.not.empty\r",
+							"    }) \r",
+							"\r",
+							"  \r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/api/users/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register - Successfull",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Registration success\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is more than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(458);\r",
+							"});\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.test(\"Test data type of the response\", () => {\r",
+							"  pm.expect(jsonData.id).to.be.a(\"number\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/register",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update success\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is more than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(519);\r",
+							"});\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.test(\"Test data type of the response\", () => {\r",
+							"  pm.expect(jsonData.name).to.be.a(\"string\");\r",
+							"  pm.expect({name: 'morpheus', job: 'manager'}).to.have.all.keys('name', 'job');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.test(\"Cookie JSESSIONID is present\", () => {\r",
+							"  pm.expect(pm.cookies.has('JSESSIONID')).to.be.false;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check the active environment\", () => {\r",
+							"  pm.expect(pm.environment.name).to.eql(\"Staging\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Tidak ada array kosong\", () => {\r",
+							"   pm.expect([\"name\" , \"job\", \"updateAt\"]).to.not.include(\"\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"job\": \"manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/{{userId}}",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Successfull",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Login success\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is more than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"field token tidak kosong\", () => {\r",
+							"   pm.expect([\"token\"]).to.not.include(\"\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"cityslicka\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/login",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": "0",
+			"type": "string"
+		}
+	]
+}
