@@ -1,2 +1,3 @@
-jalankan "npm install" terlebih dahulu di luar folder agar wdio cypress bisa di running
-setelah terinstall dan muncul folder node_modules di direktori root folder , maka kode dapat di running menggunakan perintah "npm run wdio" di terminal
+run "npm install" first
+run "npm run wdio"
+run "npm run allure-report" to see the result via allure-report
