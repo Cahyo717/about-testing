@@ -1,0 +1,14 @@
+{
+  "id": "1",
+  "firstName": "Cahyo",
+  "lastName": "Novianto",
+  "age": 25,
+  "occupation": "Pengangguran",
+  "nationality": "Indonesia",
+  "hobbies": [
+    "anime"
+  ],
+  "gender": "MALE",
+  "createdDate": "2022-08-10T09:56:55.959Z",
+  "updatedDate": "2022-08-10T09:56:55.959Z"
+}

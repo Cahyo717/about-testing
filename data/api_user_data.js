@@ -1,59 +1,67 @@
-const userData = function(occupation, nationality){
-    return {
-        id: "1",
-        firstName: "cahyo",
-        lastName: "novianto",
-        age: 25,
-        occupation: occupation,
-        nationality: nationality,
-        hobbies: [
-          "Game", "Manga", "Reading"
-        ],
-        gender: "MALE",
-        createdDate: "2022-12-05T10:16:37.174Z",
-        updatedDate: "2022-12-05T10:16:37.174Z"
-      };
-    
-}
-
-const userData2 = function(age){
+const editData = (editId) => { 
   return {
-      id: "1",
-      firstName: "cahyo",
-      lastName: "novianto",
-      age: age,
-      occupation: "Back End",
-      nationality: "Indonesia",
-      hobbies: [
-        "Game", "Manga", "Reading"
-      ],
-      gender: "MALE",
-      createdDate: "2022-12-05T10:16:37.174Z",
-      updatedDate: "2022-12-05T10:16:37.174Z"
-    };
-  
+  "id": editId,
+  "firstName": "Cahyo",
+  "lastName": "Novianto",
+  "age": 25,
+  "occupation": "Masih Nganggur",
+  "nationality": "Indonesia",
+  "hobbies": [
+    "anime"
+  ],
+  "gender": "MALE",
+  "createdDate": "2022-08-10T09:56:55.959Z",
+  "updatedDate": "2022-08-10T09:56:55.959Z"
+} 
 }
+const zeroAge = {
+  "id": "1",
+  "firstName": "Cahyo",
+  "lastName": "Novianto",
+  "age": 0,
+  "occupation": "Pengangguran",
+  "nationality": "Indonesia",
+  "hobbies": [
+    "anime"
+  ],
+  "gender": "MALE",
+  "createdDate": "2022-08-10T09:56:55.959Z",
+  "updatedDate": "2022-08-10T09:56:55.959Z"
+  }
+const emptyArray = {
+  "id": "1",
+  "firstName": "Cahyo",
+  "lastName": "Novianto",
+  "age": 25,
+  "occupation": "Pengangguran",
+  "nationality": "Indonesia",
+  "hobbies": [],
+  "gender": "MALE",
+  "createdDate": "2022-08-10T09:56:55.959Z",
+  "updatedDate": "2022-08-10T09:56:55.959Z"
+  }
 
-const userData3 = function(id, firstName, lastName, age, occupation, nationality, [hobbies] , gender){
-  return {
-      id: id,
-      firstName: firstName,
-      lastName: lastName,
-      age: age,
-      occupation: occupation,
-      nationality: nationality,
-      hobbies: [
-        hobbies
-      ],
-      gender: gender,
-      createdDate: "2022-12-05T10:16:37.174Z",
-      updatedDate: "2022-12-05T10:16:37.174Z"
-    };
-  
-}
+  const idIsNull = {
+    "id": null,
+    "firstName": "Cahyo",
+    "lastName": "Novianto",
+    "age": 25,
+    "occupation": "Pengangguran",
+    "nationality": "Indonesia",
+    "hobbies": [
+      "anime"
+    ],
+    "gender": "MALE",
+    "createdDate": "2022-08-10T09:56:55.959Z",
+    "updatedDate": "2022-08-10T09:56:55.959Z"
+    }
 
+  const UserID = '';
 
-module.exports = {
-    userData, userData2 , userData3
-}
-
+  module.exports = {
+    editData,
+    zeroAge,
+    emptyArray,
+    idIsNull,
+    UserID
+  }
